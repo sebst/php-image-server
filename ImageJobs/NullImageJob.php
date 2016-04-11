@@ -27,17 +27,17 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-require_once __DIR__."/ImageJob.php";
-require_once __DIR__."/../Images/Image.php";
+require_once __DIR__ . "/ImageJob.php";
+require_once __DIR__ . "/../Images/Image.php";
 
-class NullImageJob implements ImageJob {
+class NullImageJob implements ImageJob
+{
 
-  public function __construct() {
+    public function __construct()
+    {}
 
-  }
-
-  public function process(Image $image) {
-    return $image;
-  }
-
+    public function process(Image $image)
+    {
+        return $image;
+    }
 }

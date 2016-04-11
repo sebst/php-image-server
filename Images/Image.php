@@ -1,4 +1,5 @@
 <?php
+
 /*
  * COPYRIGHT 2016, Sebastian Steins
  * https://seb.st
@@ -27,12 +28,12 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-interface Image {
+interface Image
+{
 
-  public function getStream();
+    public function getStream();
 
-  public function getCacheKey();
+    public function getCacheKey();
 
-  public function getSize();
-
+    public function getSize();
 }

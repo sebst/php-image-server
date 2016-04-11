@@ -27,12 +27,13 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-require_once __DIR__."/Cache.php";
+require_once __DIR__ . "/Cache.php";
 
-class NullCache implements Cache {
+class NullCache implements Cache
+{
 
-  public function getOrSet($key, Closure $default) {
-    return $default();
-  }
-
+    public function getOrSet($key, Closure $default)
+    {
+        return $default();
+    }
 }

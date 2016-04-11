@@ -1,4 +1,5 @@
 <?php
+
 /*
  * COPYRIGHT 2016, Sebastian Steins
  * https://seb.st
@@ -27,12 +28,12 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-interface Job {
+interface Job
+{
 
-  public function getJobDescription();
+    public function getJobDescription();
 
-  public function authenticate();
+    public function authenticate();
 
-  public function getCacheKey();
-
+    public function getCacheKey();
 }

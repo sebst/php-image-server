@@ -27,30 +27,35 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-require_once __DIR__."/Image.php";
+require_once __DIR__ . "/Image.php";
 
-class LocalImage implements Image {
+class LocalImage implements Image
+{
 
-  private $url;
-  private $contents;
+    private $url;
 
-  public function __construct($url) {
-    $this->url = $url;
-  }
+    private $contents;
 
-  public function getStream() {
-    if (is_null($this->contents)) {
-      $this->contents = file_get_contents($this->url);
+    public function __construct($url)
+    {
+        $this->url = $url;
     }
-    return $this->contents;
-  }
 
-  public function getCacheKey() {
-    return base64_encode($this->url);
-  }
+    public function getStream()
+    {
+        if (is_null($this->contents)) {
+            $this->contents = file_get_contents($this->url);
+        }
+        return $this->contents;
+    }
 
-  public function getSize() {
-    return strlen($this->getStream());
-  }
+    public function getCacheKey()
+    {
+        return base64_encode($this->url);
+    }
 
+    public function getSize()
+    {
+        return strlen($this->getStream());
+    }
 }

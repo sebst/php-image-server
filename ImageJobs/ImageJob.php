@@ -1,4 +1,5 @@
 <?php
+
 /*
  * COPYRIGHT 2016, Sebastian Steins
  * https://seb.st
@@ -27,8 +28,8 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-interface ImageJob {
+interface ImageJob
+{
 
-  public function process(Image $image);
-
+    public function process(Image $image);
 }

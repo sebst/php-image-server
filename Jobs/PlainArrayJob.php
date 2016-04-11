@@ -27,31 +27,36 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-require_once __DIR__."/Job.php";
-require_once __DIR__."/../ImageJobs/NullImageJob.php";
-require_once __DIR__."/../ImageJobs/CropImageJob.php";
+require_once __DIR__ . "/Job.php";
+require_once __DIR__ . "/../ImageJobs/NullImageJob.php";
+require_once __DIR__ . "/../ImageJobs/CropImageJob.php";
 
+class PlainArrayJob implements Job
+{
 
-class PlainArrayJob implements Job {
+    private $jobDescription;
 
-  private $jobDescription;
-  private $signature;
-  private $key;
+    private $signature;
 
-  function __construct($jobDescription) {
-    $this->jobDescription = $jobDescription;
-  }
+    private $key;
 
-  public function authenticate() {
-    return true;
-  }
+    function __construct($jobDescription)
+    {
+        $this->jobDescription = $jobDescription;
+    }
 
-  public function getJobDescription() {
-    return $this->jobDescription;
-  }
+    public function authenticate()
+    {
+        return true;
+    }
 
-  public function getCacheKey() {
-    throw new Exception();
-  }
+    public function getJobDescription()
+    {
+        return $this->jobDescription;
+    }
 
+    public function getCacheKey()
+    {
+        throw new Exception();
+    }
 }

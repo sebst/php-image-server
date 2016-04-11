@@ -109,7 +109,7 @@ class MemcacheCache implements Cache
         }
     }
 
-    public function store($key, $value, $ttl)
+    private function store($key, $value, $ttl)
     {
         $this->memcache->set($this->poolId . $key, $value, MEMCACHE_COMPRESSED, $ttl);
     }

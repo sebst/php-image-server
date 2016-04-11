@@ -114,7 +114,7 @@ class MemcacheCache implements Cache
         $this->memcache->set($this->poolId . $key, $value, MEMCACHE_COMPRESSED, $ttl);
     }
 
-    public function retrieve($key)
+    private function retrieve($key)
     {
         $flags = false;
         
